@@ -4,6 +4,7 @@ var d = new Date();
 // var Sheet = SpreadSheet.getSheetByName("紀錄收到的訊息");
 // var LastRow = Sheet.getLastRow();
 var userMessage, msg, replyToken, url = 'https://api.line.me/v2/bot/message/reply';
+// 基本菜單
 var help =  { 
     "items": [
       {
@@ -926,7 +927,7 @@ function doPost(e) {
   }
   else if(userMessage.substr(0,2)=="新聞")
     {
-        / 資料取自newsapi
+        // 資料取自newsapi
           var news = UrlFetchApp.fetch("https://newsapi.org/v2/top-headlines?country=tw&apiKey="+'你的newsapi key'+"&pageSize=100");
           var data = JSON.parse(news);
           var total = JSON.stringify(data.totalResults);
